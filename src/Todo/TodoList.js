@@ -10,7 +10,7 @@ const styles = {
     }
 };
 
-export default function TodoList (props) {
+function TodoList (props) {
     return (
         <ul style={styles.ul}>
             { props.todos.map((todo, key) => (
@@ -19,3 +19,9 @@ export default function TodoList (props) {
         </ul>
     )
 }
+
+TodoList.propTypes = {
+    todos: PropTypes.arrayOf(PropTypes.object).isRequired
+}
+
+export default TodoList
