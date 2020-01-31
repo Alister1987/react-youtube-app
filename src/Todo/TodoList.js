@@ -14,14 +14,15 @@ function TodoList (props) {
     return (
         <ul style={styles.ul}>
             { props.todos.map((todo, key) => (
-                <TodoItem todo={todo} key={key} index={key}/>
+                <TodoItem todo={todo} key={key} index={key} onChange={props.onToggle}/>
             )) }
         </ul>
     )
 }
 
 TodoList.propTypes = {
-    todos: PropTypes.arrayOf(PropTypes.object).isRequired
+    todos: PropTypes.arrayOf(PropTypes.object).isRequired,
+    onToggle: PropTypes.func.isRequired
 }
 
 export default TodoList
