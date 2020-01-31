@@ -34,11 +34,11 @@ function TodoItem({todo, index, onChange}) {
                     style={styles.input}
                     onChange={() => onChange(todo.id)}
                 />
-                <strong>{index+1}</strong>
+                <strong>{todo.id}</strong>
                 &nbsp;
                 {todo.title}
             </span>
-            <button className="rm" onClick={() => removeTodo(todo.id)}>&times;</button>
+            <button className="rm" onClick={removeTodo.bind(null, todo.id)}>&times;</button>
         </li>
     )
 }
