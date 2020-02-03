@@ -13,11 +13,11 @@ function App() {
             .then(response => response.json())
             .then(todos => (
                 setTimeout(function () {
-                    setTodos(todos)
-                    setLoading(false)
+                    setTodos(todos);
+                    setLoading(false);
                 }, 2000)
             ))
-    })
+    }, []);
 
     function toggleTodo(id) {
         setTodos(
